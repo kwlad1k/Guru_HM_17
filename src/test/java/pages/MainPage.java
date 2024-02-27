@@ -138,8 +138,7 @@ public class MainPage {
 
     @Step("Нажатие на кнопку марки автомобиля:")
     public MainPage clickCarsModelBtn() {
-        modelItemList.find(byText("Mercedes-Benz")).click();
-        sleep(2000);
+        modelItemList.$(byText("Mercedes-Benz")).click();
 
         return this;
     }
