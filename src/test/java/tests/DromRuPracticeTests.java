@@ -11,6 +11,10 @@ public class DromRuPracticeTests extends TestBase {
 
     @Test
     @Owner("Kwlad1ck")
+    @Tags({
+            @Tag("Positive"),
+            @Tag("SMOKE")
+    })
     @DisplayName("Проверка наличия заголовка на главой странице")
     void mainPageShouldContainHeaderTest() {
         mainPage.openPage()
@@ -19,6 +23,50 @@ public class DromRuPracticeTests extends TestBase {
 
     @Test
     @Owner("Kwlad1ck")
+    @Tags({
+            @Tag("Positive"),
+            @Tag("SMOKE"),
+            @Tag("NewCarsFromDealerWidget")
+    })
+    @DisplayName("Проверка наличия блока 'Новых автомобилей от дилеров'")
+    void pageContainNewCarsWidgetTest() {
+        mainPage.openPage()
+                .checkHomeCarsBlock();
+    }
+
+    @Test
+    @Owner("Kwlad1ck")
+    @Tags({
+            @Tag("Positive"),
+            @Tag("SMOKE"),
+            @Tag("ReviewsWidget")
+    })
+    @DisplayName("Проверка наличия блока 'Новых автомобилей от дилеров'")
+    void pageContainReviewsWidgetTest() {
+        mainPage.openPage()
+                .checkReviewBlock();
+    }
+
+    @Test
+    @Owner("Kwlad1ck")
+    @Tags({
+            @Tag("Positive"),
+            @Tag("SMOKE"),
+            @Tag("PremiumCarousel")
+    })
+    @DisplayName("Проверка наличия блока премиум карусели автомобилей")
+    void pageContainPremiumCarouselTest() {
+        mainPage.openPage()
+                .checkPremiumCarousel();
+    }
+
+    @Test
+    @Owner("Kwlad1ck")
+    @Tags({
+            @Tag("Positive"),
+            @Tag("SMOKE"),
+            @Tag("Region")
+    })
     @DisplayName("Проверка смены региона")
     void changeRegionTest() {
         mainPage.openPage()
@@ -30,7 +78,11 @@ public class DromRuPracticeTests extends TestBase {
     @Test
     @Owner("Kwlad1ck")
     @Severity(SeverityLevel.BLOCKER)
-    @Tag("Authorization")
+    @Tags({
+            @Tag("Positive"),
+            @Tag("SMOKE"),
+            @Tag("Authorization")
+    })
     @DisplayName("Проверка успешной авторизации пользователя")
     void successfulAuthTest() {
         mainPage.openPage()
@@ -42,7 +94,11 @@ public class DromRuPracticeTests extends TestBase {
 
     @Test
     @Owner("Kwlad1ck")
-    @Tag("NegativeAuth")
+    @Tags({
+            @Tag("NegativeAuth"),
+            @Tag("SMOKE"),
+            @Tag("Authorization")
+    })
     @DisplayName("Негативаня проверка авторизации с некорректными данными")
     void negativeAuthTest() {
         mainPage.openPage()
@@ -57,10 +113,11 @@ public class DromRuPracticeTests extends TestBase {
     @Owner("Kwlad1ck")
     @Tags({
             @Tag("Positive"),
+            @Tag("SMOKE"),
             @Tag("AutoHistory")
     })
     @DisplayName("Проверка выдачи результатов поиска авто по Госномеру")
-     void checkAutoHistoryTest() {
+    void checkAutoHistoryTest() {
         mainPage.openPage()
                 .setValueHistoryCarsInput(testData.registrationNumberAuto)
                 .clickSubmitBtnCarsHistory()
@@ -72,6 +129,7 @@ public class DromRuPracticeTests extends TestBase {
     @Owner("Kwlad1ck")
     @Tags({
             @Tag("Negative"),
+            @Tag("SMOKE"),
             @Tag("AutoHistory")
     })
     @DisplayName("Проверка при вводе неваллидных данных в поле поиска истории по авто")
@@ -87,6 +145,7 @@ public class DromRuPracticeTests extends TestBase {
     @Owner("Kwlad1ck")
     @Tags({
             @Tag("Positive"),
+            @Tag("SMOKE"),
             @Tag("SearchAuto")
     })
     @DisplayName("Проверка поиска обьвлений авто по списку")

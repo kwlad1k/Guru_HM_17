@@ -47,8 +47,8 @@ tasks.withType(Test) {
     }
 }
 
-task  registration_test(type: Test) {
+task  smoke_test(type: Test) {
     useJUnitPlatform {
-        includeTags("Registration")
+        includeTags("SMOKE")
     }
 }

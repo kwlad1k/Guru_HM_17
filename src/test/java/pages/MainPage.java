@@ -11,6 +11,9 @@ public class MainPage {
 
     private SelenideElement
             regionName = $("[data-ga-stats-name=HomeRegionChange]"),
+            homeAutoBlock = $("[data-ftid=home-auto-block]"),
+            reviewsBlock = $("[data-ftid=index_reviews]"),
+            premiumCarousel = $("[data-ftid=component_premium-carousel]"),
             regionList = $(".b-selectCars__section"),
             authBtn = $("[data-ga-stats-name=auth_block_login]"),
             usernameInput = $("#sign"),
@@ -34,9 +37,32 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка наличия заголовка на странице")
+    @Step("Наличие заголовка на странице")
     public MainPage checkHeader() {
-        $(withText("Продажа авто в России")).should(Condition.exist);
+        $(withText("Продажа авто в России")).should(Condition.visible);
+
+        return this;
+    }
+
+    @Step("Наличие блока отзывов владельцев авто")
+    public MainPage checkHomeCarsBlock() {
+        homeAutoBlock.should(Condition.visible);
+        homeAutoBlock.should(Condition.text("Новые автомобили от дилеров"));
+
+        return this;
+    }
+
+    @Step("Наличие блока отзывов владельцев")
+    public MainPage checkReviewBlock() {
+        reviewsBlock.should(Condition.visible);
+        reviewsBlock.should(Condition.text("Отзывы владельцев авто"));
+
+        return this;
+    }
+
+    @Step("Наличие блока примиум карусели")
+    public MainPage checkPremiumCarousel() {
+        premiumCarousel.should(Condition.visible);
 
         return this;
     }
@@ -48,9 +74,9 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка открытия страницы 'Мой домашний регион'")
+    @Step("Открытие страницы 'Мой домашний регион'")
     public MainPage checkHeaderRegion() {
-        $(withText("Мой домашний регион")).should(Condition.exist);
+        $(withText("Мой домашний регион")).should(Condition.visible);
 
         return this;
     }
@@ -84,7 +110,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Провекра наличия элемента авторизованного пользователя")
+    @Step("Наличие элемента авторизованного пользователя")
     public MainPage checkAuthUserElement() {
         userHeaderInfo.should(Condition.visible);
 
@@ -93,8 +119,8 @@ public class MainPage {
 
     @Step("Проверка ошибок при авторизации несуществующими аккаунтом")
     public MainPage checkAuthErrors() {
-        loginErrors.should(Condition.exist);
-        passwordErrors.should(Condition.exist);
+        loginErrors.should(Condition.visible);
+        passwordErrors.should(Condition.visible);
 
         return this;
     }
@@ -113,7 +139,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка наличия данных в результате поиска")
+    @Step("Наличие данных в результате поиска")
     public MainPage checkSearchResultHistoryCars(String value) {
         formHistoryCarsData.should(Condition.visible);
         formHistoryCarsData.should(Condition.text(value));
@@ -123,7 +149,7 @@ public class MainPage {
 
     @Step("Проверка сообщения об ошибке некорректного ввода в поле проверки авто")
     public MainPage checkErrorMessageWidget() {
-        errorMessageWidget.should(Condition.exist);
+        errorMessageWidget.should(Condition.visible);
         errorMessageWidget.should(Condition.text("Введите корректный VIN / № кузова / госномер"));
 
         return this;
