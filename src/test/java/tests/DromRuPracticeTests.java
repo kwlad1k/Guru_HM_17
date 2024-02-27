@@ -94,7 +94,5 @@ public class DromRuPracticeTests extends TestBase {
         mainPage.openPage()
                 .clickAllListCars()
                 .clickCarsModelBtn();
-
-
     }
 }
