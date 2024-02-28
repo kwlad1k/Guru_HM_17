@@ -27,7 +27,7 @@ public class MainPage {
             formHistoryCarsData = $("[data-app-root=auto-story]"),
             errorMessageWidget = $("[data-ftid=error_message]"),
             allCasrBtn = $("[data-ftid=component_cars-list_expand-control]"),
-            modelItemList = $("[data-ftid=component_cars-list-item_hidden-link]");
+            componentBrandModel = $("[data-ftid=component_brand-model]");
 
 
     @Step("Открытие главной страницы ")
@@ -162,9 +162,24 @@ public class MainPage {
         return this;
     }
 
-    @Step("Нажатие на кнопку марки автомобиля:")
-    public MainPage clickCarsModelBtn() {
-        modelItemList.$(byText("Mercedes-Benz")).click();
+    @Step("Нажатие на кнопку марки автомобиля: {value}")
+    public MainPage clickCarsModelBtn(String value) {
+        $$("[data-ftid=component_cars-list-item_hidden-link]")
+                .filterBy(Condition.text(value)).first().click();
+
+        return this;
+    }
+
+    @Step("Наличие компонента на странице о бренде авто")
+    public MainPage checkHeaderSellCarModel(String value) {
+        componentBrandModel.should(Condition.visible);
+        componentBrandModel.should(Condition.text(String.format("Всё о %s",value)));
+
+        return this;
+    }
+    @Step("Переход по навигации 'Автомобили'")
+    public MainPage clickNavigationCars() {
+        $("[data-ftid=component_header_main-menu-item]", 0).click();
 
         return this;
     }

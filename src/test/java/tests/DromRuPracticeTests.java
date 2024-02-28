@@ -135,7 +135,7 @@ public class DromRuPracticeTests extends TestBase {
     @DisplayName("Проверка при вводе неваллидных данных в поле поиска истории по авто")
     void negativeFillFormAutoHistoryTest() {
         mainPage.openPage()
-                .setValueHistoryCarsInput(testData.randomAutoModel)
+                .setValueHistoryCarsInput(testData.randomCarModel)
                 .clickSubmitBtnCarsHistory()
                 .checkErrorMessageWidget();
 
@@ -146,12 +146,29 @@ public class DromRuPracticeTests extends TestBase {
     @Tags({
             @Tag("Positive"),
             @Tag("SMOKE"),
-            @Tag("SearchAuto")
+            @Tag("SearchCars")
     })
     @DisplayName("Проверка поиска обьвлений авто по списку")
-    void searchResultIncludeVehicleMakeTest() {
+    void searchResultIncludeCarModelsTest() {
         mainPage.openPage()
                 .clickAllListCars()
-                .clickCarsModelBtn();
+                .clickCarsModelBtn(testData.randomCarModel)
+                .checkHeaderSellCarModel(testData.randomCarModel)
+                .checkPremiumCarousel();
     }
+    @Test
+    @Owner("Kwlad1ck")
+    @Tags({
+            @Tag("Positive"),
+            @Tag("SMOKE"),
+            @Tag("SearchCars")
+    })
+    @DisplayName("Проверка перехода по вкладке 'Автомобили'")
+    void successfulNavigationTabTest() {
+        mainPage.openPage()
+                .clickNavigationCars()
+                .checkPremiumCarousel();
+
+    }
+
 }

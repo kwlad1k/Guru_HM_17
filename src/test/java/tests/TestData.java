@@ -27,6 +27,7 @@ public class TestData {
             randomEmail = faker.internet().emailAddress(),
             randomPassword = faker.internet().password(),
             registrationNumberAuto = faker.options().option("Р145АУ198", "Х309РМ55", "А302ХС790"),
-            randomAutoModel = faker.options().option("BMW", "Audi", "Toyota", "Ford",
-                    "Dodge", "Buick", "Honda", "Nissan");
+            randomCarModel = faker.options().option("BMW", "Audi", "Toyota", "Land Rover", "Mercedes-Benz",
+                    "Volkswagen", "Tank", "Zeekr", "EXEED", "Geely");
+
 }
