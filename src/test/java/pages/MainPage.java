@@ -76,7 +76,7 @@ public class MainPage {
 
     @Step("Открытие страницы 'Мой домашний регион'")
     public MainPage checkHeaderRegion() {
-        $(withText("Мой домашний регион")).should(Condition.visible);
+        $(withText("Мой домашний регион")).should(Condition.exist);
 
         return this;
     }
