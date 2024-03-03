@@ -21,3 +21,5 @@ gradlew.bat
 
 ### Config ###
 prod.properties
+
+.DS_Store
