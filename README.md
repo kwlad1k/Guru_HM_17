@@ -8,7 +8,7 @@
 - [Используемый стек технологий](#computer-используемый-стек-технологий)
 - [Реализованные проверки](#scroll-реализованные-проверки)
 - [Запуск автотестов](#arrow_forward-запуск-автотестов)
-- [Сборка в Jenkins](#)
+- [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Пример Allure-отчета](#-пример-allure-отчета)
 - [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
 - [Интеграция с Jira](#-интеграция-с-jira)
@@ -87,7 +87,7 @@ smoke_test
 
 Для запуска сборки необходимо перейти в раздел <code>Build with parameters</code> и нажать кнопку <code>Build</code>.
 <p align="center">
-<img title="Сборка в Jenkins" src="media/screenshots/Jenkins.PNG">
+<img title="Сборка в Jenkins" src="media/screenshots/Jenkins.png">
 </p>
 
 После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появятся значки <code>Allure TestOps</code> и <code>Allure Report</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовыми артефактами.
@@ -97,7 +97,7 @@ smoke_test
 На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них активных/находяться в ревью/черновик/устаревшие, а так же количество ручных и автоматизированных тестов. Результаты выполнения тестов приходят в автоматическом режиме по интеграции при каждом запуске сборки проекта.
 
 <p align="center">
-<img title="Dashboard Allure TestOps" src="media/screenshots/TestOpsDashboard.PNG">
+<img title="Dashboard Allure TestOps" src="media/screenshots/TestOpsDashboard.png">
 </p>
 
 ### Результат выполнения сборки #10
@@ -138,7 +138,7 @@ smoke_test
 После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/publicDromAlerts) приходит оповещение с отчетом о результатах прохождения автотестов.
 
 <p align="center">
-<img width="90%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">
+<img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">
 </p>
 
 ## <img width="8%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео пример запуска автотестов в Selenoid
