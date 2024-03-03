@@ -1,6 +1,6 @@
 # Проект по автоматизации тестовых сценариев для сайта Drom.ru
 <p align="center">
-<a href="https://www.drom.ru/"><img title="Логотип компании Drom" src="media/logos/dromlogo.png"></a>
+<a href="https://www.drom.ru/"><img title="Логотип компании Drom" src="media/logos/dromLogo.png"></a>
 </p>
 
 ## :pushpin: Содержание:
@@ -8,12 +8,12 @@
 - [Используемый стек технологий](#computer-используемый-стек-технологий)
 - [Реализованные проверки](#scroll-реализованные-проверки)
 - [Запуск автотестов](#arrow_forward-запуск-автотестов)
-- [Сборка в Jenkins](#-сборка-в-jenkins)
+- [Сборка в Jenkins](#)
 - [Пример Allure-отчета](#-пример-allure-отчета)
 - [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
 - [Интеграция с Jira](#-интеграция-с-jira)
-- [Уведомления в Telegram](#-уведомления-в-telegram)
-- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
+- [Уведомления в Telegram](#-уведомления-в-telegram-канал-с-использованием-бота)
+- [Видео примера запуска тестов в Selenoid](#-видео-пример-запуска-автотестов-в-selenoid)
 
 ## :computer: Используемый стек технологий
 
@@ -141,7 +141,7 @@ smoke_test
 <img width="90%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">
 </p>
 
-## <img width="8%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео примера запуска тестов в Selenoid
+## <img width="8%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео пример запуска автотестов в Selenoid
 
 В отчетах Allure для каждого теста прикреплён не только скриншот, но и видео прохождения теста, записанное Selenoid.
 <p align="center">
