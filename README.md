@@ -145,5 +145,5 @@ smoke_test
 
 В отчетах Allure для каждого теста прикреплён не только скриншот, но и видео прохождения теста, записанное Selenoid.
 <p align="center">
-  <img title="Видео, записанное Selenoid" src="media/video/video.gif">
+  <img title="Видео записанное Selenoid" src="media/video/video.gif">
 </p>
