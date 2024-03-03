@@ -41,7 +41,7 @@ public class DromRuPracticeTests extends TestBase {
             @Tag("SMOKE"),
             @Tag("ReviewsWidget")
     })
-    @DisplayName("Проверка наличия блока 'Новых автомобилей от дилеров'")
+    @DisplayName("Проверка наличия блока 'Отзывов от автомобилях'")
     void pageContainReviewsWidgetTest() {
         mainPage.openPage()
                 .checkReviewBlock();
