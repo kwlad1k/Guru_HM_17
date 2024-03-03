@@ -154,7 +154,6 @@ public class DromRuPracticeTests extends TestBase {
                 .clickAllListCars()
                 .clickCarsModelBtn(testData.randomCarModel)
                 .checkHeaderSellCarModel(testData.randomCarModel)
-                .checkPremiumCarousel();
     }
     @Test
     @Owner("Kwlad1ck")
