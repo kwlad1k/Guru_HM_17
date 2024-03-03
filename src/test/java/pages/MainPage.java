@@ -106,6 +106,7 @@ public class MainPage {
     @Step("Нажатие кнопки подтверждения")
     public MainPage clickSignBtn() {
         signBtn.click();
+        sleep(15000);
 
         return this;
     }

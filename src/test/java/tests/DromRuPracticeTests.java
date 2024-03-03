@@ -153,7 +153,7 @@ public class DromRuPracticeTests extends TestBase {
         mainPage.openPage()
                 .clickAllListCars()
                 .clickCarsModelBtn(testData.randomCarModel)
-                .checkHeaderSellCarModel(testData.randomCarModel)
+                .checkHeaderSellCarModel(testData.randomCarModel);
     }
     @Test
     @Owner("Kwlad1ck")
