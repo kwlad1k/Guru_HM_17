@@ -1,4 +1,4 @@
-# Проект по автоматизации тестовых сценариев для сайта Drom.ru
+# Проект по автоматизации тестовых сценариев для сайта [Drom.ru](https://www.drom.ru/)
 <p align="center">
 <a href="https://www.drom.ru/"><img title="Логотип компании Drom" src="media/logos/dromLogo.png"></a>
 </p>
