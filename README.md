@@ -77,7 +77,7 @@ smoke_test
 ```
 
 <p align="center">
-<img title="Запуск с конфигурациями" src="media/screenshots/JenkinsStart.png">
+<img title="Запуск с параметрами" src="media/screenshots/JenkinsStart.png">
 </p>
 
 ### Параметры сборки
