@@ -76,6 +76,10 @@ smoke_test
 -Dremote.url=${REMOTE_URL}
 ```
 
+<p align="center">
+<img title="Запуск с конфигурациями" src="media/screenshots/JenkinsStart.png">
+</p>
+
 ### Параметры сборки
 
 * <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По умолчанию – <code>chrome</code>.
