@@ -21,18 +21,20 @@ public class TestBase {
         DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
         Configuration.baseUrl = "https://www.drom.ru/";
         Configuration.pageLoadStrategy = "normal";
-
         Configuration.browser = driverConfig.browserName();
         Configuration.browserVersion = driverConfig.browserVersion();
         Configuration.browserSize = driverConfig.browserSize();
-        Configuration.remote = driverConfig.remoteUrl();
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
+        if (driverConfig.remoteMode()) {
+            Configuration.remote = driverConfig.remoteUrl();
+
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                    "enableVNC", true,
+                    "enableVideo", true
+            ));
+            Configuration.browserCapabilities = capabilities;
+        }
     }
 
     @BeforeEach
@@ -42,10 +44,13 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
+        DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
         Attach.screenshotAs("Screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();
+        if (driverConfig.remoteMode()) {
+            Attach.addVideo();
+        }
         Selenide.closeWebDriver();
     }
 }
