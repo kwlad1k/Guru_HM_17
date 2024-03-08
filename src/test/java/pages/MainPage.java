@@ -191,7 +191,7 @@ public class MainPage {
 
     @Step("Переход по навигации 'Автомобили'")
     public MainPage clickNavigationCars() {
-       itemNavigationCars.click();
+        itemNavigationCars.click();
 
         return this;
     }

@@ -156,6 +156,7 @@ public class DromRuPracticeTests extends TestBase {
                 .clickCarsModelBtn(testData.randomCarModel)
                 .checkHeaderSellCarModel(testData.randomCarModel);
     }
+
     @Test
     @Owner("Kwlad1ck")
     @Tags({
