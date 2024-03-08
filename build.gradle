@@ -47,8 +47,8 @@ tasks.withType(Test) {
     }
 }
 
-task  smoke_test(type: Test) {
+task  positive_test(type: Test) {
     useJUnitPlatform {
-        includeTags("SMOKE")
+        includeTags("Positive")
     }
 }
