@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -27,7 +28,11 @@ public class MainPage {
             formHistoryCarsData = $("[data-app-root=auto-story]"),
             errorMessageWidget = $("[data-ftid=error_message]"),
             allCasrBtn = $("[data-ftid=component_cars-list_expand-control]"),
-            componentBrandModel = $("[data-ftid=component_brand-model]");
+            componentBrandModel = $("[data-ftid=component_brand-model]"),
+            itemNavigationCars = $("[data-ftid=component_header_main-menu-item]", 0);
+
+    private ElementsCollection
+            carsModelBtn = $$("[data-ftid=component_cars-list-item_hidden-link]");
 
 
     @Step("Открытие главной страницы ")
@@ -171,8 +176,7 @@ public class MainPage {
 
     @Step("Нажатие на кнопку марки автомобиля: {value}")
     public MainPage clickCarsModelBtn(String value) {
-        $$("[data-ftid=component_cars-list-item_hidden-link]")
-                .filterBy(text(value)).first().click();
+        carsModelBtn.filterBy(text(value)).first().click();
 
         return this;
     }
@@ -187,7 +191,7 @@ public class MainPage {
 
     @Step("Переход по навигации 'Автомобили'")
     public MainPage clickNavigationCars() {
-        $("[data-ftid=component_header_main-menu-item]", 0).click();
+       itemNavigationCars.click();
 
         return this;
     }
