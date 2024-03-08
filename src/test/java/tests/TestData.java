@@ -1,10 +1,14 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import config.AuthConfig;
+import org.aeonbits.owner.ConfigFactory;
 
 public class TestData {
 
     Faker faker = new Faker();
+
+    AuthConfig authConfig = ConfigFactory.create(AuthConfig.class);
 
     public String regionName = faker.options().option("Алтайский край", "Амурская область", "Архангельская область",
             "Астраханская область", "Белгородская область", "Брянская область", "Владимирская область", "Волгоградская область",
@@ -22,8 +26,8 @@ public class TestData {
             "Тульская область", "Тюменская область", "Удмуртская область", "Ульяновская область", "Хабаровский край", "Ханты-Мансийский автономный округ",
             "Челябинская область", "Чеченская область", "Чувашская область", "Чукотский автономный округ", "Ямало-Ненецкий автономный округ",
             "Ярославская область"),
-            userName = "RichardMilly",
-            userPassword = "F3#C8r3)ZJ",
+            userName = authConfig.userName(),
+            userPassword = authConfig.password(),
             randomEmail = faker.internet().emailAddress(),
             randomPassword = faker.internet().password(),
             registrationNumberAuto = faker.options().option("Р145АУ198", "Х309РМ55", "А302ХС790"),
