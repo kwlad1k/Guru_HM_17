@@ -1,9 +1,9 @@
 package pages;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -39,30 +39,30 @@ public class MainPage {
 
     @Step("Наличие заголовка на странице")
     public MainPage checkHeader() {
-        $(withText("Продажа авто в России")).shouldBe(Condition.visible);
+        $(withText("Продажа авто в России")).shouldBe(visible);
 
         return this;
     }
 
     @Step("Наличие блока отзывов владельцев авто")
     public MainPage checkHomeCarsBlock() {
-        homeAutoBlock.shouldBe(Condition.visible);
-        homeAutoBlock.shouldHave(Condition.text("Новые автомобили от дилеров"));
+        homeAutoBlock.shouldBe(visible);
+        homeAutoBlock.shouldHave(text("Новые автомобили от дилеров"));
 
         return this;
     }
 
     @Step("Наличие блока отзывов владельцев")
     public MainPage checkReviewBlock() {
-        reviewsBlock.shouldBe(Condition.visible);
-        reviewsBlock.shouldHave(Condition.text("Отзывы владельцев авто"));
+        reviewsBlock.shouldBe(visible);
+        reviewsBlock.shouldHave(text("Отзывы владельцев авто"));
 
         return this;
     }
 
     @Step("Наличие блока примиум карусели")
     public MainPage checkPremiumCarousel() {
-        premiumCarousel.shouldBe(Condition.visible);
+        premiumCarousel.shouldBe(visible);
 
         return this;
     }
@@ -76,7 +76,7 @@ public class MainPage {
 
     @Step("Открытие страницы 'Мой домашний регион'")
     public MainPage checkHeaderRegion() {
-        $(withText("Мой домашний регион")).shouldBe(Condition.exist);
+        $(withText("Мой домашний регион")).shouldBe(exist);
 
         return this;
     }
@@ -90,7 +90,7 @@ public class MainPage {
 
     @Step("Проверка региона")
     public MainPage checkRegion(String value) {
-        regionName.$(withText(value)).shouldBe(Condition.visible);
+        regionName.$(withText(value)).shouldBe(visible);
 
         return this;
     }
@@ -119,15 +119,15 @@ public class MainPage {
 
     @Step("Наличие элемента авторизованного пользователя")
     public MainPage checkAuthUserElement() {
-        userHeaderInfo.shouldBe(Condition.visible);
+        userHeaderInfo.shouldBe(visible);
 
         return this;
     }
 
     @Step("Проверка ошибок при авторизации несуществующими аккаунтом")
     public MainPage checkAuthErrors() {
-        loginErrors.shouldBe(Condition.visible);
-        passwordErrors.shouldBe(Condition.visible);
+        loginErrors.shouldBe(visible);
+        passwordErrors.shouldBe(visible);
 
         return this;
     }
@@ -148,16 +148,16 @@ public class MainPage {
 
     @Step("Наличие данных в результате поиска")
     public MainPage checkSearchResultHistoryCars(String value) {
-        formHistoryCarsData.shouldBe(Condition.visible);
-        formHistoryCarsData.shouldBe(Condition.text(value));
+        formHistoryCarsData.shouldBe(visible);
+        formHistoryCarsData.shouldBe(text(value));
 
         return this;
     }
 
     @Step("Проверка сообщения об ошибке некорректного ввода в поле проверки авто")
     public MainPage checkErrorMessageWidget() {
-        errorMessageWidget.shouldBe(Condition.visible);
-        errorMessageWidget.shouldBe(Condition.text("Введите корректный VIN / № кузова / госномер"));
+        errorMessageWidget.shouldBe(visible);
+        errorMessageWidget.shouldBe(text("Введите корректный VIN / № кузова / госномер"));
 
         return this;
     }
@@ -172,18 +172,19 @@ public class MainPage {
     @Step("Нажатие на кнопку марки автомобиля: {value}")
     public MainPage clickCarsModelBtn(String value) {
         $$("[data-ftid=component_cars-list-item_hidden-link]")
-                .filterBy(Condition.text(value)).first().click();
+                .filterBy(text(value)).first().click();
 
         return this;
     }
 
     @Step("Наличие компонента на странице о бренде авто")
     public MainPage checkHeaderSellCarModel(String value) {
-        componentBrandModel.shouldBe(Condition.visible);
-        componentBrandModel.shouldBe(Condition.text(String.format("Всё о %s",value)));
+        componentBrandModel.shouldBe(visible);
+        componentBrandModel.shouldBe(text(String.format("Всё о %s", value)));
 
         return this;
     }
+
     @Step("Переход по навигации 'Автомобили'")
     public MainPage clickNavigationCars() {
         $("[data-ftid=component_header_main-menu-item]", 0).click();
