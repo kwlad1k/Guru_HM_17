@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/${config}.properties"})
+        "classpath:config/${env}.properties"})
 
 public interface DriverConfig extends Config {
     @Key("browser.name")
@@ -13,7 +13,7 @@ public interface DriverConfig extends Config {
     String browserName();
 
     @Key("browser.version")
-    @DefaultValue("122")
+    @DefaultValue("122.0")
     String browserVersion();
 
     @Key("browser.size")

@@ -10,7 +10,7 @@ import io.qameta.allure.Step;
 public class MainPage {
 
     private SelenideElement
-            regionName = $("[data-ga-stats-name=HomeRegionChange]"),
+            regionName = $("[data-ftid=component_header_region]"),
             homeAutoBlock = $("[data-ftid=home-auto-block]"),
             reviewsBlock = $("[data-ftid=index_reviews]"),
             premiumCarousel = $("[data-ftid=component_premium-carousel]"),
@@ -84,6 +84,13 @@ public class MainPage {
     @Step("Смена региона")
     public MainPage changeHomeRegion(String value) {
         regionList.$(withText(value)).click();
+
+        return this;
+    }
+
+    @Step("Проверка региона")
+    public MainPage checkRegion(String value) {
+        regionName.$(withText(value)).shouldBe(Condition.visible);
 
         return this;
     }
