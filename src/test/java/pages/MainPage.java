@@ -39,30 +39,30 @@ public class MainPage {
 
     @Step("Наличие заголовка на странице")
     public MainPage checkHeader() {
-        $(withText("Продажа авто в России")).should(Condition.visible);
+        $(withText("Продажа авто в России")).shouldBe(Condition.visible);
 
         return this;
     }
 
     @Step("Наличие блока отзывов владельцев авто")
     public MainPage checkHomeCarsBlock() {
-        homeAutoBlock.should(Condition.visible);
-        homeAutoBlock.should(Condition.text("Новые автомобили от дилеров"));
+        homeAutoBlock.shouldBe(Condition.visible);
+        homeAutoBlock.shouldHave(Condition.text("Новые автомобили от дилеров"));
 
         return this;
     }
 
     @Step("Наличие блока отзывов владельцев")
     public MainPage checkReviewBlock() {
-        reviewsBlock.should(Condition.visible);
-        reviewsBlock.should(Condition.text("Отзывы владельцев авто"));
+        reviewsBlock.shouldBe(Condition.visible);
+        reviewsBlock.shouldHave(Condition.text("Отзывы владельцев авто"));
 
         return this;
     }
 
     @Step("Наличие блока примиум карусели")
     public MainPage checkPremiumCarousel() {
-        premiumCarousel.should(Condition.visible);
+        premiumCarousel.shouldBe(Condition.visible);
 
         return this;
     }
@@ -76,7 +76,7 @@ public class MainPage {
 
     @Step("Открытие страницы 'Мой домашний регион'")
     public MainPage checkHeaderRegion() {
-        $(withText("Мой домашний регион")).should(Condition.exist);
+        $(withText("Мой домашний регион")).shouldBe(Condition.exist);
 
         return this;
     }
@@ -119,15 +119,15 @@ public class MainPage {
 
     @Step("Наличие элемента авторизованного пользователя")
     public MainPage checkAuthUserElement() {
-        userHeaderInfo.should(Condition.visible);
+        userHeaderInfo.shouldBe(Condition.visible);
 
         return this;
     }
 
     @Step("Проверка ошибок при авторизации несуществующими аккаунтом")
     public MainPage checkAuthErrors() {
-        loginErrors.should(Condition.visible);
-        passwordErrors.should(Condition.visible);
+        loginErrors.shouldBe(Condition.visible);
+        passwordErrors.shouldBe(Condition.visible);
 
         return this;
     }
@@ -148,16 +148,16 @@ public class MainPage {
 
     @Step("Наличие данных в результате поиска")
     public MainPage checkSearchResultHistoryCars(String value) {
-        formHistoryCarsData.should(Condition.visible);
-        formHistoryCarsData.should(Condition.text(value));
+        formHistoryCarsData.shouldBe(Condition.visible);
+        formHistoryCarsData.shouldBe(Condition.text(value));
 
         return this;
     }
 
     @Step("Проверка сообщения об ошибке некорректного ввода в поле проверки авто")
     public MainPage checkErrorMessageWidget() {
-        errorMessageWidget.should(Condition.visible);
-        errorMessageWidget.should(Condition.text("Введите корректный VIN / № кузова / госномер"));
+        errorMessageWidget.shouldBe(Condition.visible);
+        errorMessageWidget.shouldBe(Condition.text("Введите корректный VIN / № кузова / госномер"));
 
         return this;
     }
@@ -179,8 +179,8 @@ public class MainPage {
 
     @Step("Наличие компонента на странице о бренде авто")
     public MainPage checkHeaderSellCarModel(String value) {
-        componentBrandModel.should(Condition.visible);
-        componentBrandModel.should(Condition.text(String.format("Всё о %s",value)));
+        componentBrandModel.shouldBe(Condition.visible);
+        componentBrandModel.shouldBe(Condition.text(String.format("Всё о %s",value)));
 
         return this;
     }
