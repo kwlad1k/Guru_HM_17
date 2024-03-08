@@ -69,7 +69,7 @@ gradle clean test
 
 ### Запуск тестов из Jenkins (с указанием параметров)
 ```
-smoke_test
+clean test
 -Dbrowser.name=${BROWSER}
 -Dbrowser.version=${BROWSER_VERSION} 
 -Dbrowser.size=${BROWSER_SIZE}
