@@ -24,6 +24,6 @@ public interface DriverConfig extends Config {
     String remoteUrl();
 
     @Key("remote.mode")
-    @DefaultValue("true")
+    @DefaultValue("false")
     Boolean remoteMode();
 }
