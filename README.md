@@ -79,7 +79,7 @@ clean test -Denv=remote
 ```
 
 <p align="center">
-<img title="Запуск с параметрами" src="media/screenshots/JenkinsStart.png">
+<img title="Запуск с параметрами" src="media/screenshots/JenkinsStart-new.png">
 </p>
 
 ### Параметры сборки
