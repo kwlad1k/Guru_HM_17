@@ -74,7 +74,8 @@ clean test -Denv=remote
 -Dbrowser.version=${BROWSER_VERSION} 
 -Dbrowser.size=${BROWSER_SIZE}
 -Dremote.url=${REMOTE_URL}
-
+-Duser.name=${SECRET_NAME}
+-Duser.password=${SECRET_PASSWORD}
 ```
 
 <p align="center">
@@ -87,7 +88,8 @@ clean test -Denv=remote
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию – <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>.
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию – <code>https://user1:1234@selenoid.autotests.cloud/wd/hub</code>
-
+* <code>SECRET_NAME</code> – Логин для входа в учетную запись Drom
+* <code>SECRET_PASSWORD</code> – Пароль для входа в учетную запись Drom
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logos/Jenkins.svg"> [Сборка](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/) в Jenkins
 
 Для запуска сборки необходимо перейти в раздел <code>Build with parameters</code> и нажать кнопку <code>Build</code>.
