@@ -69,11 +69,12 @@ gradle clean test
 
 ### Запуск тестов из Jenkins (с указанием параметров)
 ```
-clean test
+clean test -Denv=remote
 -Dbrowser.name=${BROWSER}
 -Dbrowser.version=${BROWSER_VERSION} 
 -Dbrowser.size=${BROWSER_SIZE}
 -Dremote.url=${REMOTE_URL}
+
 ```
 
 <p align="center">
